@@ -22,7 +22,7 @@ public class SimpleCanalClientTest extends AbstractCanalClientTest {
         // 根据ip，直接创建链接，无HA的功能
         String destination = "adc";
 //        String ip = AddressUtils.getHostIp();
-        String ip = "10.99.15.12";
+        String ip = "140.143.214.76";
         CanalConnector connector = CanalConnectors.newSingleConnector(new InetSocketAddress(ip, 11111),
                 destination,
                 "canal",

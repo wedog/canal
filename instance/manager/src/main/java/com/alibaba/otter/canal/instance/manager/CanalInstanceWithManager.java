@@ -355,15 +355,15 @@ public class CanalInstanceWithManager extends AbstractCanalInstance {
                     @Override
                     public TableMetaTSDB build(String destination, String springXml) {
                         try {
-                            System.setProperty("canal.instance.tsdb.url", parameters.getTsdbJdbcUrl());
-                            System.setProperty("canal.instance.tsdb.dbUsername", parameters.getTsdbJdbcUserName());
-                            System.setProperty("canal.instance.tsdb.dbPassword", parameters.getTsdbJdbcPassword());
+                            System.setProperty("canal_instance_tsdb_url", parameters.getTsdbJdbcUrl());
+                            System.setProperty("canal_instance_tsdb_dbUsername", parameters.getTsdbJdbcUserName());
+                            System.setProperty("canal_instance_tsdb_dbPassword", parameters.getTsdbJdbcPassword());
 
                             return TableMetaTSDBBuilder.build(destination, "classpath:spring/tsdb/mysql-tsdb.xml");
                         } finally {
-                            System.setProperty("canal.instance.tsdb.url", "");
-                            System.setProperty("canal.instance.tsdb.dbUsername", "");
-                            System.setProperty("canal.instance.tsdb.dbPassword", "");
+                            System.setProperty("canal_instance_tsdb_url", "");
+                            System.setProperty("canal_instance_tsdb_dbUsername", "");
+                            System.setProperty("canal_instance_tsdb_dbPassword", "");
                         }
                     }
                 });

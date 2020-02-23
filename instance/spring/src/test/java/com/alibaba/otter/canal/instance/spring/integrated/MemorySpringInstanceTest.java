@@ -23,7 +23,7 @@ public class MemorySpringInstanceTest {
 
     @Before
     public void start() {
-        System.setProperty("canal.instance.destination", "retl");
+        System.setProperty("canal_instance_destination", "retl");
         context = new ClassPathXmlApplicationContext(new String[] { "spring/memory-instance.xml" });
     }
 

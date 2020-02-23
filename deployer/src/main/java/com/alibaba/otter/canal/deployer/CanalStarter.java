@@ -76,7 +76,7 @@ public class CanalStarter {
             System.setProperty(CanalConstants.CANAL_WITHOUT_NETTY, "true");
             if (mqProperties.getFlatMessage()) {
                 // 设置为raw避免ByteString->Entry的二次解析
-                System.setProperty("canal.instance.memory.rawEntry", "false");
+                System.setProperty("canal_instance_memory_rawEntry", "false");
             }
         }
 

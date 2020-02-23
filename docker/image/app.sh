@@ -76,10 +76,10 @@ function checkStart() {
 
 function start_canal() {
     echo "start canal ..."
-    managerAddress=`perl -le 'print $ENV{"canal.admin.manager"}'`
+    managerAddress=`perl -le 'print $ENV{"canal_admin_manager"}'`
     if [ ! -z "$managerAddress" ] ; then
         # canal_local.properties mode
-        adminPort=`perl -le 'print $ENV{"canal.admin.port"}'`
+        adminPort=`perl -le 'print $ENV{"canal_admin_port"}'`
         if [ -z "$adminPort" ] ; then
             adminPort=11110
         fi
@@ -89,7 +89,7 @@ function start_canal() {
         #check start
         checkStart "canal" "nc 127.0.0.1 $adminPort -w 1 -z | wc -l" 30
     else
-        metricsPort=`perl -le 'print $ENV{"canal.metrics.pull.port"}'`
+        metricsPort=`perl -le 'print $ENV{"canal_metrics_pull_port"}'`
         if [ -z "$metricsPort" ] ; then
             metricsPort=11112
         fi

@@ -17,7 +17,7 @@
 		<property name="locationNames">
 			<list>
 				<value>classpath:canal.properties</value>
-				<value>classpath:${canal.instance.destination:}/instance.properties</value>
+				<value>classpath:${canal_instance_destination:}/instance.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -32,7 +32,7 @@
 	</bean>
 
 	<bean id="instance" class="com.alibaba.otter.canal.instance.spring.CanalInstanceWithSpring">
-		<property name="destination" value="${canal.instance.destination}" />
+		<property name="destination" value="${canal_instance_destination}" />
 		<property name="eventParser">
 			<ref local="eventParser" />
 		</property>
@@ -66,7 +66,7 @@
 	</bean>
 
 	<bean id="eventParser" class="com.alibaba.otter.canal.parse.inbound.mysql.MysqlEventParser">
-		<property name="destination" value="${canal.instance.destination}" />
+		<property name="destination" value="${canal_instance_destination}" />
 		<property name="slaveId" value="${canal.instance.mysql.slaveId:1234}" />
 		<!-- 心跳配置 -->
 		<property name="detectingEnable" value="${canal.instance.detecting.enable:false}" />

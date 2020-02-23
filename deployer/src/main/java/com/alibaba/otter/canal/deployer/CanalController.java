@@ -94,8 +94,8 @@ public class CanalController {
         }
 
         // 兼容1.1.0版本的ak/sk参数名
-        String accesskey = getProperty(properties, "canal.instance.rds.accesskey");
-        String secretkey = getProperty(properties, "canal.instance.rds.secretkey");
+        String accesskey = getProperty(properties, "canal_instance_rds_accesskey");
+        String secretkey = getProperty(properties, "canal_instance_rds_secretkey");
         if (StringUtils.isNotEmpty(accesskey)) {
             System.setProperty(CanalConstants.CANAL_ALIYUN_ACCESSKEY, accesskey);
         }
@@ -361,7 +361,7 @@ public class CanalController {
         String managerAddress = getProperty(properties,
             CanalConstants.getInstanceManagerAddressKey(CanalConstants.GLOBAL_NAME));
         if (StringUtils.isNotEmpty(managerAddress)) {
-            if (StringUtils.equals(managerAddress, "${canal.admin.manager}")) {
+            if (StringUtils.equals(managerAddress, "${canal_admin_manager}")) {
                 managerAddress = adminManagerAddress;
             }
 
@@ -438,7 +438,7 @@ public class CanalController {
         if (config.getMode().isManager()) {
             String managerAddress = getProperty(properties, CanalConstants.getInstanceManagerAddressKey(destination));
             if (StringUtils.isNotEmpty(managerAddress)) {
-                if (StringUtils.equals(managerAddress, "${canal.admin.manager}")) {
+                if (StringUtils.equals(managerAddress, "${canal_admin_manager}")) {
                     managerAddress = adminManagerAddress;
                 }
                 config.setManagerAddress(managerAddress);

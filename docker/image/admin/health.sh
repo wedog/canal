@@ -9,7 +9,7 @@ if [ -d "/home/admin/canal-server" ]; then
 	CHECK_URL="http://127.0.0.1:$serverPort/index.html"
 	CHECK_POINT="Canal"
 else
-	metrics_port=`perl -le 'print $ENV{"canal.metrics.pull.port"}'`
+	metrics_port=`perl -le 'print $ENV{"canal_metrics_pull_port"}'`
 	if [ "$metrics_port" == "" ]; then
 		metrics_port="11112"
 	fi
