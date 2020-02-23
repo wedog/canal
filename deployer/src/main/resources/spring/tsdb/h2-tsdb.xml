@@ -17,7 +17,7 @@
 		<property name="locationNames">
 			<list>
 				<value>classpath:canal.properties</value>
-				<value>classpath:${canal.instance.destination:}/instance.properties</value>
+				<value>classpath:${canal_instance_destination:}/instance.properties</value>
 			</list>
 		</property>
 	</bean>

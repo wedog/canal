@@ -17,7 +17,7 @@
 		<property name="locationNames">
 			<list>
 				<value>classpath:canal.properties</value>
-				<value>classpath:${canal.instance.destination:}/instance.properties</value>
+				<value>classpath:${canal_instance_destination:}/instance.properties</value>
 			</list>
 		</property>
 	</bean>
@@ -32,8 +32,8 @@
 	</bean>
 	
 	<bean id="baseEventParser" class="com.alibaba.otter.canal.parse.inbound.mysql.rds.RdsBinlogEventParserProxy" abstract="true">
-		<property name="accesskey" value="${canal.aliyun.accesskey:}" />
-		<property name="secretkey" value="${canal.aliyun.secretkey:}" />
-		<property name="instanceId" value="${canal.instance.rds.instanceId:}" />
+		<property name="accesskey" value="${canal_aliyun_accesskey:}" />
+		<property name="secretkey" value="${canal_aliyun_secretkey:}" />
+		<property name="instanceId" value="${canal_instance_rds_instanceId:}" />
 	</bean>
 </beans>

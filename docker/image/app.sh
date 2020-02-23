@@ -94,7 +94,7 @@ function start_canal() {
             metricsPort=11112
         fi
 
-        destination=`perl -le 'print $ENV{"canal.destinations"}'`
+        destination=`perl -le 'print $ENV{"canal_destinations"}'`
         if [[ "$destination" =~ ',' ]]; then
             echo "multi destination:$destination is not support"
             exit 1;
