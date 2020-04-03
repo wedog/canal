@@ -1,0 +1,15 @@
+dataSourceKey: defaultDS
+outerAdapterKey: testkey
+destination: adc
+groupId: g1
+esMapping:
+  _index: tm_lead_pre_test
+  _type: _doc
+  _id: _id
+  upsert: true
+#  pk: id
+  sql: "select a.id as _id, a.channel_name as channel_name, a.lead_id as lead_id, a.channel_id as channel_id from tm_lead_pre a"
+#  objFields:
+#    _labels: array:;
+  etlCondition: "where 1={}"
+  commitBatch: 3000

@@ -1,0 +1,7 @@
+dataSourceKey: defaultDS
+destination: adc
+outerAdapterKey: mysqltest
+concurrent: true
+dbMapping:
+  mirrorDb: true
+  database: adc
